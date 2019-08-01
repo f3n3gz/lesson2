@@ -5,6 +5,8 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import ru.geekbrains.spring.Annotation.NotWanted;
+import ru.geekbrains.spring.Annotation.Wanted;
 import ru.geekbrains.spring.Interface.OmegaInterface;
 import ru.geekbrains.spring.Interface.SuperInterface;
 
@@ -22,6 +24,14 @@ public class TestClass {
     @Autowired
     @Qualifier("implB")
     private SuperInterface superInterfaceB;
+
+    @Autowired
+    @Wanted
+    private SuperInterface superInterfaceWanted;
+
+    @Autowired
+    @NotWanted
+    private SuperInterface superInterfaceNotWanted;
 
 //    primary > name convention
 //    @Autowired

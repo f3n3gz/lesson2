@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import ru.geekbrains.spring.Annotation.Wanted;
 import ru.geekbrains.spring.Classes.TestClass;
 import ru.geekbrains.spring.Classes.TestClassXml;
 
@@ -39,6 +40,10 @@ public class App {
         System.out.println(testClass.getSuperInterfaceB().getClass().getSimpleName());
         System.out.println(testClass.getInterfaceImplC().getClass().getSimpleName());
         System.out.println(testClass.getSuperInterfacePrimary().getClass().getSimpleName());
+
+
+        System.out.println("Wanted: "+ testClass.getSuperInterfaceWanted());
+        System.out.println("Not Wanted: "+ testClass.getSuperInterfaceNotWanted());
 
         // XML
         final ApplicationContext contextXml=new ClassPathXmlApplicationContext("appConfig.xml");
